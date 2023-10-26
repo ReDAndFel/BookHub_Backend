@@ -1,17 +1,12 @@
 package app.dtos;
 
-import app.model.Category;
-import jakarta.persistence.ElementCollection;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.awt.*;
 import java.time.LocalDate;
-import java.util.List;
-import java.util.Map;
 @AllArgsConstructor
 @Getter
 @Setter

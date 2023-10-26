@@ -19,7 +19,9 @@ public class Category implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     @Column(nullable = false)
-    String descripcion;
+    String nombre;
+    @Column(nullable = false)
+    String iconFontAwesome;
     @OneToMany(mappedBy = "category")
     List<Book> books;
 }

@@ -1,12 +1,6 @@
 package app.dtos;
 
-import app.model.PaymentMethod;
-import app.model.Rol;
-import app.model.TransactionDetail;
 import app.model.User;
-import jakarta.persistence.Column;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;

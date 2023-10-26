@@ -16,13 +16,13 @@ public interface BookRepo extends JpaRepository<Book, Integer> {
     List<Book> listBookByCategory(int idCategory);
 
     @Query("select b from Book b where b.available = :stateBook")
-    List<Book> listBookByAvailable(StateBook stateBook);
+    List<Book> listBookByState(StateBook stateBook);
 
     @Query("select b from Book b join b.userFavorite f where f.id = :idPerson and b.available.id = 1")
-    List<Book> listFavoriteBook(String idPerson);
+    List<Book> listFavoriteBook(int idUser);
 
     @Query("select distinct b from User u join u.userLender ul join ul.books b where u.id = :idUser")
-    List<Book> listSharedBooksToUser(String idUser);
+    List<Book> listSharedBooksToUser(int idUser);
 
 
     @Query("select b from Book b where b.available.id = 1")
@@ -35,6 +35,6 @@ public interface BookRepo extends JpaRepository<Book, Integer> {
     List<Book> listBookByTitle(String title);
 
     @Query("select b from Book b where b.user.id = :idPerson and b.available.id = 1")
-    List<Book> listBookByUser(String idUser);
+    List<Book> listBookByUser(int idUser);
 
 }
