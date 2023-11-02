@@ -19,4 +19,5 @@ public interface UserInterface {
     void addFriend(int idUser, int idUserFriend) throws Exception;
     void removeFriend(int idUser, int idUserFriend) throws Exception;
     void validateExist(User foundUser, int idUser) throws Exception;
+    boolean validatePassword(String password, String confirmPassword)throws Exception;
 }

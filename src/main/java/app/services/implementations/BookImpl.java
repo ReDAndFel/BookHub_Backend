@@ -6,10 +6,7 @@ import app.dtos.ImageDTO;
 import app.model.*;
 import app.repositories.BookRepo;
 import app.repositories.UserRepo;
-import app.services.interfaces.BookInterface;
-import app.services.interfaces.CategoryInterface;
-import app.services.interfaces.StateBookInterface;
-import app.services.interfaces.UserInterface;
+import app.services.interfaces.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +29,8 @@ public class BookImpl implements BookInterface {
     private StateBookInterface stateBookInterface;
     @Autowired
     private UserRepo userRepo;
+    @Autowired
+    FileInterface fileInterface;
 
     @Override
     public int createBook(BookDTO bookDTO) throws Exception {
