@@ -23,7 +23,7 @@ public class ReviewDTO {
     private String review;
     @NotNull(message = "La fecha no puede ser nulo")
     @NotBlank(message = "La fecha no puede ser vacío")
-    private LocalDate date;
+    private String date;
     @NotNull(message = "El id de libro no puede ser nulo")
     @NotBlank(message = "El id de libro no puede ser vacío")
     private int idBook;

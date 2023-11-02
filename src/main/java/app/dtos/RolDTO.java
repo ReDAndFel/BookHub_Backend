@@ -13,7 +13,7 @@ public class RolDTO {
 
     @NotNull(message = "El id no puede ser nulo")
     @NotBlank(message = "El id no puede ser vacío")
-    private String id;
+    private int id;
     @NotNull(message = "El nombre no puede ser nulo")
     @NotBlank(message = "El nombre no puede ser vacío")
     private String nombre;

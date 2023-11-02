@@ -28,7 +28,7 @@ public class BookDTO {
     private String editorial;
     @NotNull(message = "La fecha de lanzamiento no puede ser nulo")
     @NotBlank(message = "La fecha de lanzamiento no puede ser vacío")
-    private LocalDate realeaseDate;
+    private String realeaseDate;
     @NotNull(message = "La puntuacion no puede ser nulo")
     @NotBlank(message = "La puntuacion no puede ser vacío")
     private float puntuation;
@@ -49,6 +49,6 @@ public class BookDTO {
     private FileDTO file;
     @NotNull(message = "El id de usuario no puede ser nulo")
     @NotBlank(message = "El id de usuario no puede ser vacío")
-    private String user;
+    private int idUser;
 
 }

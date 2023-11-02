@@ -22,9 +22,6 @@ public class UserDTO {
     @NotNull(message = "La contraseña no puede ser nulo")
     @NotBlank(message = "La contraseña no puede ser vacío")
     private String password;
-    @NotNull(message = "La confirmacion de la contraseña no puede ser nulo")
-    @NotBlank(message = "La confirmacion de la contraseña no puede ser vacío")
-    private String confirmPassword;
     @NotNull(message = "El nombre no puede ser nulo")
     @NotBlank(message = "El nombre no puede ser vacío")
     private String firstName;

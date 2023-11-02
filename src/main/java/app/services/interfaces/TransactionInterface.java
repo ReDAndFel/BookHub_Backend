@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface TransactionInterface {
     int createTransaction(TransactionDTO transactionDTO) throws Exception;
-    List<TransactionDTO> listTransactionByUser(int idPerson);
+    List<TransactionDTO> listTransactionByUser(int idUser);
     TransactionDTO getTransactionDTO(int idTransaction) throws Exception;
     Transaction getTransaction (int idTransaction) throws Exception;
     float calculateTotalPrice(List<TransactionDetail> transactionDetails) throws Exception;

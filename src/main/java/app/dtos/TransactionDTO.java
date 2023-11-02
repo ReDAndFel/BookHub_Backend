@@ -22,15 +22,15 @@ public class TransactionDTO {
     private float totalPrice;
     @NotNull(message = "La fecha no puede ser nulo")
     @NotBlank(message = "La fecha no puede ser vacío")
-    private LocalDate date;
+    private String date;
     @NotNull(message = "El id de metodo de pago no puede ser nulo")
     @NotBlank(message = "El id de metodo de pago no puede ser vacío")
     private int idPaymentMethod;
     @NotNull(message = "La lista de detalles transaccion no puede ser nulo")
     @NotBlank(message = "El lista de detalles transaccion no puede ser vacío")
-    private List<TransactionDetailDTO> transactionDetailGetDTOS;
+    private List<TransactionDetailDTO> transactionDetailDTOS;
     @NotNull(message = "El id de usuario no puede ser nulo")
     @NotBlank(message = "El id de usuario no puede ser vacío")
-    private User user;
+    private int idUser;
 
 }

@@ -25,6 +25,8 @@ public interface BookInterface {
     void addFavoriteBook(int idUser, int idBook) throws Exception;
     void removeFavoriteBook(int idUser, int idBook) throws Exception;
     void addSharedBooks(int idUserLender,int idUser) throws Exception;
-    void removeSharedBooks(int idUser, int idBook) throws Exception;
+    void removeSharedBooks(int idUserLender, int idUser) throws Exception;
     List<BookDTO> listSharedBooksToUser(int idUser);
+    List<BookDTO> listLibraryUser(int idUser);
+    void validateExist(Book foundBook, int idBook) throws Exception;
 }

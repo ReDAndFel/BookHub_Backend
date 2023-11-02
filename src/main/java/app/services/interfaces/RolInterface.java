@@ -6,6 +6,6 @@ import app.model.Rol;
 
 
 public interface RolInterface {
-    Rol getCategory(int idRol) throws Exception;
+    Rol getRol(int idRol) throws Exception;
     RolDTO getRolDTO(int idRol) throws Exception;
 }

@@ -13,4 +13,5 @@ public interface PaymentMethodInterface {
     List<PaymentMethodDTO> listPaymentMethodByUser(int idUser);
     PaymentMethodDTO getPaymentMethodDTO (int idPaymentMethod) throws Exception;
     PaymentMethod getPaymentMethod(int idPaymentMethod) throws Exception;
+    void validateExist(PaymentMethod paymentMethod,int idPaymentMethod) throws Exception;
 }
