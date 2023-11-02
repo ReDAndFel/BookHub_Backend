@@ -12,6 +12,7 @@ public interface UserInterface {
     int updateUser(int idUser, UserDTO userDTO) throws Exception;
     UserDTO getUserDTO(int idUser) throws Exception;
     User getUser(int idUser) throws Exception;
+    List<UserDTO> listAllUsers() throws Exception;
     int changeOldPassword(int idUser, PasswordDTO passwordDTO ) throws Exception;
     void recuperatePassword(String emailUser) throws Exception;
     int changePasswordRecuperated(String emailUser, PasswordDTO passwordDTO) throws Exception;

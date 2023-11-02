@@ -25,9 +25,9 @@ public class AuthController {
         return ResponseEntity.status(HttpStatus.OK).body( new MessageDTO(HttpStatus.OK, false, sesionInterface.login(loginUser)) );
     }
     @PostMapping("/registro")
-    public ResponseEntity<MessageDTO> registerPerson(@Valid @RequestBody UserDTO userDTO) throws Exception {
+    public ResponseEntity<MessageDTO> registerUser(@Valid @RequestBody UserDTO userDTO) throws Exception {
         userInterface.registerUser(userDTO);
-        return ResponseEntity.status(HttpStatus.CREATED).body(new MessageDTO(HttpStatus.CREATED,false, "Persona registrada correctamente"));
+        return ResponseEntity.status(HttpStatus.CREATED).body(new MessageDTO(HttpStatus.CREATED,false, "Usuario registrado correctamente"));
     }
     /*@PostMapping("/refresh")
     public ResponseEntity<MessageDTO> refreshToken(@Valid @RequestBody TokenDTO tokenDTO) throws Exception {

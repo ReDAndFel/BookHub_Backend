@@ -26,7 +26,7 @@ public class ReviewImpl implements ReviewInterface {
     private BookInterface bookInterface;
 
     @Override
-    public int createComment(ReviewDTO reviewDTO) throws Exception {
+    public int createReview(ReviewDTO reviewDTO) throws Exception {
         Review review = new Review();
         Book book = bookInterface.getBook(reviewDTO.getIdBook());
         review.setPuntuation(reviewDTO.getPuntuation());

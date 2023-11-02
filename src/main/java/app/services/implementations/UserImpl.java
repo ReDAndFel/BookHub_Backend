@@ -87,6 +87,16 @@ public class UserImpl implements UserInterface {
     }
 
     @Override
+    public List<UserDTO> listAllUsers() throws Exception {
+        List<User> userList = userRepo.findAll();
+        List<UserDTO> userDTOList = new ArrayList<>();
+        for (User user: userList){
+            userDTOList.add(convertToDTO(user));
+        }
+        return userDTOList;
+    }
+
+    @Override
     public int changeOldPassword(int idUser, PasswordDTO passwordDTO) throws Exception {
         User foundUser = getUser(idUser);
         validateExist(foundUser, idUser);
