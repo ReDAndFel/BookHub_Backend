@@ -24,7 +24,7 @@ public class FileController {
         return ResponseEntity.status(HttpStatus.OK).body( new MessageDTO(HttpStatus.OK, false, response ) );
     }
     @DeleteMapping("/eliminar_archivo/{id}")
-    public ResponseEntity<MessageDTO> deleteImage(@PathVariable String id) throws Exception{
+    public ResponseEntity<MessageDTO> deleteFile(@PathVariable String id) throws Exception{
         Map response = fileInterface.deleteFile(id);
         return ResponseEntity.status(HttpStatus.OK).body( new MessageDTO(HttpStatus.OK, false, response ) );
     }

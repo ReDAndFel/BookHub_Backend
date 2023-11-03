@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/detalle_transaccion")
-public class DetailTransactionController {
+public class TransactionDetailController {
     private final TransactionDetailInterface transactionDetailInterface;
     @GetMapping("/obtener_detalles_transaccion/{idTransaction}")
     public ResponseEntity<MessageDTO> listTransactionDetailByTransaction(@PathVariable int idTransaction){

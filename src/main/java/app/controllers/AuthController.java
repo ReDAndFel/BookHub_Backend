@@ -21,7 +21,7 @@ public class AuthController {
     private final UserInterface userInterface;
     private final SesionInterface sesionInterface;
     @PostMapping("/login")
-    public ResponseEntity<MessageDTO> login(@Valid @RequestBody SesionDTO loginUser) {
+    public ResponseEntity<MessageDTO> login(@Valid @RequestBody SesionDTO loginUser) throws Exception {
         return ResponseEntity.status(HttpStatus.OK).body( new MessageDTO(HttpStatus.OK, false, sesionInterface.login(loginUser)) );
     }
     @PostMapping("/registro")

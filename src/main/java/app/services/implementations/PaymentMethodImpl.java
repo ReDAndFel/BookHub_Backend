@@ -32,7 +32,7 @@ public class PaymentMethodImpl implements PaymentMethodInterface {
         paymentMethod.setSurname(paymentMethodDTO.getSurname());
         LocalDate expeditionDate = convertDate(paymentMethodDTO.getExpeditionDate());
         paymentMethod.setExpeditionDate(expeditionDate);
-        User user = userInterface.getUser(paymentMethodDTO.getUser());
+        User user = userInterface.getUser(paymentMethodDTO.getIdUser());
         paymentMethod.setUser(user);
         paymentMethod.setState(true);
         return paymentMethodRepo.save(paymentMethod).getId();

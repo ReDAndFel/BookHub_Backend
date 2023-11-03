@@ -179,4 +179,10 @@ public class UserImpl implements UserInterface {
         }
         return true;
     }
+
+    @Override
+    public User getUserByEmail(String email) throws Exception {
+        User user = userRepo.findUserByEmail(email);
+        return user;
+    }
 }

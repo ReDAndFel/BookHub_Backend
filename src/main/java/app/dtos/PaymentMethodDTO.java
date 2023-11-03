@@ -32,6 +32,6 @@ public class PaymentMethodDTO {
     boolean state;
     @NotNull(message = "El id de usuario no puede ser nulo")
     @NotBlank(message = "El id de usuario no puede ser vacío")
-    private int user;
+    private int idUser;
 
 }

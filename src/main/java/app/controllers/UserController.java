@@ -26,7 +26,7 @@ public class UserController {
         userInterface.changePasswordRecuperated(emailUser, passwordDTO);
         return ResponseEntity.status(HttpStatus.OK).body(new MessageDTO(HttpStatus.OK, false, "Contraseña cambiada con exito"));
     }
-    @PutMapping("/cambiar_contraseña/{idPerson}")
+    @PutMapping("/cambiar_contraseña/{idUser}")
     public ResponseEntity<MessageDTO> changeOldPassword(@PathVariable int idUser, @RequestBody PasswordDTO passwordDTO) throws Exception {
         userInterface.changeOldPassword(idUser, passwordDTO);
         return ResponseEntity.status(HttpStatus.OK).body(new MessageDTO(HttpStatus.OK, false, "Contraseña cambiada con exito"));

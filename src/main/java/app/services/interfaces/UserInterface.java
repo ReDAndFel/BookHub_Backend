@@ -21,4 +21,6 @@ public interface UserInterface {
     void removeFriend(int idUser, int idUserFriend) throws Exception;
     void validateExist(User foundUser, int idUser) throws Exception;
     boolean validatePassword(String password, String confirmPassword)throws Exception;
+
+    User getUserByEmail(String email) throws Exception;
 }

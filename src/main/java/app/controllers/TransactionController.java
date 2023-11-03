@@ -21,7 +21,7 @@ public class TransactionController {
 
     }
 
-    @GetMapping("/obtener_transaction_person/{idUser}")
+    @GetMapping("/obtener_transaccion_usuario/{idUser}")
     public ResponseEntity<MessageDTO> listTransactionByUser(@PathVariable int idUser){
         return ResponseEntity.status(HttpStatus.OK).body( new MessageDTO(HttpStatus.OK, false,transactionInterface.listTransactionByUser(idUser)));
     }
