@@ -45,7 +45,7 @@ public class UserController {
         userInterface.addFriend(idUser, idUserFriend);
         return ResponseEntity.status(HttpStatus.OK).body(new MessageDTO(HttpStatus.OK, false, "Usuario agregado correctamente a amigos"));
     }
-    @DeleteMapping("/quitar_amigo/{diUser}/{idUserFriend")
+    @DeleteMapping("/quitar_amigo/{idUser}/{idUserFriend}")
     public ResponseEntity<MessageDTO> removeFriend(@PathVariable int idUser, @PathVariable int idUserFriend) throws Exception{
         userInterface.removeFriend(idUser,idUserFriend);
         return ResponseEntity.status(HttpStatus.OK).body( new MessageDTO(HttpStatus.OK, false,"Usuario eliminado correctamente de amigos"));

@@ -17,7 +17,7 @@ public interface BookRepo extends JpaRepository<Book, Integer> {
     @Query("select b from Book b where b.available.id = :idStateBook")
     List<Book> listBookByState(int idStateBook);
 
-    @Query("select b from Book b join b.userFavorite f where f.id = :idPerson and b.available.id = 2")
+    @Query("select b from Book b join b.userFavorite f where f.id = :idUser and b.available.id = 2")
     List<Book> listFavoriteBook(int idUser);
 
     @Query("select distinct b from User u join u.userLender ul join ul.books b where u.id = :idUser")
@@ -33,7 +33,7 @@ public interface BookRepo extends JpaRepository<Book, Integer> {
     @Query("select b from Book b where b.title like concat('%', :title, '%') and b.available.id = 2")
     List<Book> listBookByTitle(String title);
 
-    @Query("select b from Book b where b.user.id = :idPerson and b.available.id = 2")
+    @Query("select b from Book b where b.user.id = :idUser and b.available.id = 2")
     List<Book> listBookByUser(int idUser);
 
 }

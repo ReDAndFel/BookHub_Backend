@@ -68,7 +68,7 @@ public class BookController {
     public ResponseEntity<MessageDTO> listFavoriteBooks(@PathVariable int idUser){
         return ResponseEntity.status(HttpStatus.OK).body( new MessageDTO(HttpStatus.OK, false,booktInterface.listFavoriteBook(idUser)));
     }
-    @GetMapping("/obtener_libros_favoritos/{idUser}")
+    @GetMapping("/obtener_libros_precio/{minPrice}/{maxPrice}")
     public ResponseEntity<MessageDTO> listBooksByPrice(@PathVariable float minPrice, @PathVariable float maxPrice){
         return ResponseEntity.status(HttpStatus.OK).body( new MessageDTO(HttpStatus.OK, false,booktInterface.listBookByPrice(minPrice,maxPrice)));
     }
@@ -76,7 +76,7 @@ public class BookController {
     public ResponseEntity<MessageDTO> listBooksByTitle(@PathVariable String title){
         return ResponseEntity.status(HttpStatus.OK).body( new MessageDTO(HttpStatus.OK, false,booktInterface.listBookByTitle(title)));
     }
-    @GetMapping("/obtener_libros_aprobados}")
+    @GetMapping("/obtener_libros_aprobados")
     public ResponseEntity<MessageDTO> listApprovedBooks(){
         return ResponseEntity.status(HttpStatus.OK).body( new MessageDTO(HttpStatus.OK, false,booktInterface.listAllBooksApproved()));
     }

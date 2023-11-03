@@ -16,7 +16,7 @@ public class ReviewController {
 
     @PostMapping("/reseñar")
     public ResponseEntity<MessageDTO> createComment(@RequestBody ReviewDTO reviewDTO) throws Exception{
-        reviewInterface.createComment(reviewDTO);
+        reviewInterface.createReview(reviewDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(new MessageDTO(HttpStatus.CREATED,false, "Reseña publicada correctamente"));
     }
     @GetMapping("/obtener_reseñas_libro/{idBook}")
