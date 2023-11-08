@@ -125,7 +125,9 @@ public class BookImpl implements BookInterface {
 
     @Override
     public BookDTO getBookDTO(int idBook) throws Exception {
-        return null;
+        Book book = bookRepo.findById(idBook).get();
+        BookDTO bookDTO = convertToDTO(book);
+        return bookDTO;
     }
 
     @Override

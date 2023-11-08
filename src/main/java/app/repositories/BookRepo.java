@@ -11,7 +11,7 @@ import java.util.List;
 public interface BookRepo extends JpaRepository<Book, Integer> {
 
     //Poner el estado aprobado con el id 1 en la base de datos para que funcionen estas query
-    @Query("select b from Book b where b.category.id = :idCategory and b.available.id = 1 ")
+    @Query("select b from Book b where b.category.id = :idCategory and b.available.id = 2 ")
     List<Book> listBookByCategory(int idCategory);
 
     @Query("select b from Book b where b.available.id = :idStateBook")

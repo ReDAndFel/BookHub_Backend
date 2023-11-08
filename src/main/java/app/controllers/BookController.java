@@ -56,7 +56,7 @@ public class BookController {
     public ResponseEntity<MessageDTO> getBook(@PathVariable int idBook) throws Exception {
         return ResponseEntity.status(HttpStatus.OK).body( new MessageDTO(HttpStatus.OK, false,booktInterface.getBookDTO(idBook)));
     }
-    @GetMapping("/obtener_libro_categoria/{idCategory}")
+    @GetMapping("/obtener_libros_categoria/{idCategory}")
     public ResponseEntity<MessageDTO> listBookByCategory(@PathVariable int idCategory){
         return ResponseEntity.status(HttpStatus.OK).body( new MessageDTO(HttpStatus.OK, false,booktInterface.listBookByCategory(idCategory)));
     }

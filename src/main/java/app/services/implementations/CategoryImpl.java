@@ -36,7 +36,7 @@ public class CategoryImpl implements CategoryInterface {
             categoryDTOList.add(convertToGetDTO(category));
         }
 
-        return null;
+        return categoryDTOList;
     }
 
     private CategoryDTO convertToGetDTO(Category category) {

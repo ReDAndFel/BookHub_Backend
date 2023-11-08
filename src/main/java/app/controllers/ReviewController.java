@@ -10,16 +10,16 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/api/reseña")
+@RequestMapping("/api/resenia")
 public class ReviewController {
     private final ReviewInterface reviewInterface;
 
-    @PostMapping("/reseñar")
+    @PostMapping("/reseniar")
     public ResponseEntity<MessageDTO> createComment(@RequestBody ReviewDTO reviewDTO) throws Exception{
         reviewInterface.createReview(reviewDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(new MessageDTO(HttpStatus.CREATED,false, "Reseña publicada correctamente"));
     }
-    @GetMapping("/obtener_reseñas_libro/{idBook}")
+    @GetMapping("/obtener_resenias_libro/{idBook}")
     public ResponseEntity<MessageDTO> listCommentsByProduct(@PathVariable int idBook){
         return ResponseEntity.status(HttpStatus.OK).body( new MessageDTO(HttpStatus.OK, false,reviewInterface.listReviewsByBook(idBook)));
     }

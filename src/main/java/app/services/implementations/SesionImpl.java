@@ -5,10 +5,12 @@ import app.dtos.TokenDTO;
 import app.model.User;
 import app.services.interfaces.SesionInterface;
 import app.services.interfaces.UserInterface;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class SesionImpl implements SesionInterface {
+    @Autowired
     private UserInterface userInterface;
 
     @Override
