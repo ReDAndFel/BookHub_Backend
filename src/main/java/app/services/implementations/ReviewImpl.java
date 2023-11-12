@@ -42,46 +42,26 @@ public class ReviewImpl implements ReviewInterface {
 
     @Override
     public List<ReviewDTO> listReviewsByBook(int idBook) {
-        List<Review> listReview = reviewRepo.findByBook(idBook);
+        List<Object[]> listReview = reviewRepo.findByBook(idBook);
         List<ReviewDTO> listReviewDTO = new ArrayList<>();
-        for (Review review : listReview) {
-            listReviewDTO.add(convertToDTO(review));
+        for (Object[] review : listReview) {
+            listReviewDTO.add(convertObjectToDTO(review));
         }
         return listReviewDTO;
     }
 
-    @Override
-    public ReviewDTO getReviewDTO(int idReview) throws Exception {
-        Review review = reviewRepo.findById(idReview).get();
-        return convertToDTO(review);
-    }
-
-    @Override
-    public Review getReview(int idReview) throws Exception {
-        Review review = reviewRepo.findById(idReview).get();
-        return review;
-    }
-
-    private ReviewDTO convertToDTO(Review review) {
+    private ReviewDTO convertObjectToDTO(Object[] reviewObject) {
+        Review review = (Review) reviewObject[0];
+        String username = (String) reviewObject[1];
         ReviewDTO commentGetDTO = new ReviewDTO(
                 review.getId(),
                 review.getPuntuation(),
                 review.getReview(),
                 review.getDate().toString(),
                 review.getBook().getId(),
-                review.getUser().getId()
+                review.getUser().getId(),
+                username
         );
         return commentGetDTO;
-    }
-
-    private LocalDate convertDate(String fecha) {
-        LocalDate fechaLocalDate = null;
-        try {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-            fechaLocalDate = LocalDate.parse(fecha, formatter);
-        } catch (Exception e) {
-            System.out.println("Error al convertir la fecha: " + e.getMessage());
-        }
-        return fechaLocalDate;
     }
 }

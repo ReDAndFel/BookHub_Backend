@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface ReviewRepo extends JpaRepository<Review, Integer> {
-    @Query("select c from Review c where c.book.id = :idBook")
-    List<Review> findByBook(int idBook);
+    @Query("SELECT r, u.username FROM Review r JOIN r.user u WHERE r.book.id = :idBook")
+    List<Object[]> findByBook(int idBook);
 }

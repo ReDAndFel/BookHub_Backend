@@ -30,6 +30,7 @@ public class ReviewDTO {
     @NotNull(message = "El id de usuario no puede ser nulo")
     @NotBlank(message = "El id de usuario no puede ser vacío")
     private int idUser;
+    private String username;
 
 
 }
