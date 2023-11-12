@@ -34,7 +34,12 @@ public class PaymentMethodController {
     }
 
     @GetMapping("/obtener_metodos_de_pago_user/{idUser}")
-    public ResponseEntity<MessageDTO> listPaymentMethodByPerson(@PathVariable int idUser) {
+    public ResponseEntity<MessageDTO> listPaymentMethodByUser(@PathVariable int idUser) {
         return ResponseEntity.status(HttpStatus.OK).body(new MessageDTO(HttpStatus.OK, false, paymentMethodInterface.listPaymentMethodByUser(idUser)));
+    }
+
+    @GetMapping("/obtener_metodo_de_pago/{idPaymentMethod}")
+    public ResponseEntity<MessageDTO> getPaymentMethod(@PathVariable int idPaymentMethod) throws Exception {
+        return ResponseEntity.status(HttpStatus.OK).body(new MessageDTO(HttpStatus.OK, false, paymentMethodInterface.getPaymentMethodDTO(idPaymentMethod)));
     }
 }

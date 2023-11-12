@@ -26,8 +26,7 @@ public class PaymentMethodDTO {
     @NotNull(message = "El cvv no puede ser nulo")
     @NotBlank(message = "El cvv no puede ser vacío")
     int cvv;
-    @NotNull(message = "El estado no puede ser nulo")
-    @NotBlank(message = "El estado no puede ser vacío")
+
     boolean state;
     @NotNull(message = "El id de usuario no puede ser nulo")
     @NotBlank(message = "El id de usuario no puede ser vacío")
