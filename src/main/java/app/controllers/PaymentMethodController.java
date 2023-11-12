@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/metodo_de_pago")
+@CrossOrigin(origins = "*")
 public class PaymentMethodController {
     private final PaymentMethodInterface paymentMethodInterface;
 

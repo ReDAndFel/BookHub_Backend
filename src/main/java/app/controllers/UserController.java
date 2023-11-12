@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/usuario")
+@CrossOrigin(origins = "*")
 public class UserController {
     private final UserInterface userInterface;
     @PutMapping("/actualizar/{idUser}")

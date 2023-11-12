@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/libros")
+@CrossOrigin(origins = "*")
 public class BookController {
     private final BookInterface booktInterface;
 

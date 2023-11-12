@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/mod")
+@CrossOrigin(origins = "*")
 public class ModController {
     private final BookInterface booktInterface;
 

@@ -14,6 +14,7 @@ import java.util.Map;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/archivo")
+@CrossOrigin(origins = "*")
 public class FileController {
     private final FileInterface fileInterface;
     @PostMapping("/subir_imagen")

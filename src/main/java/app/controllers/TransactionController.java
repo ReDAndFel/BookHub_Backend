@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/transaccion")
+@CrossOrigin(origins = "*")
 public class TransactionController {
     private final TransactionInterface transactionInterface;
 
