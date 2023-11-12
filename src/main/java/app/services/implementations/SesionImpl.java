@@ -24,6 +24,8 @@ public class SesionImpl implements SesionInterface {
                 throw new Exception("No coincide la contraseña. Intente de nuevo.");
             }
             token = new TokenDTO(user.getId(),user.getRol().getId(),user.getUsername());
+        }else{
+            throw new Exception("No existe ningun usuario con ese correo.");
         }
         return token;
     }
