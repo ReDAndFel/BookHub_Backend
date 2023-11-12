@@ -276,7 +276,8 @@ public class BookImpl implements BookInterface {
         }
         Book foundBook = getBook(idBook);
         validateExist(foundBook, idBook);
-        foundUser.getFavoriteBook().add(foundBook);
+        List<Book> favoriteBooks = foundUser.getFavoriteBook();
+        favoriteBooks.add(foundBook);
         userRepo.save(foundUser);
     }
 
