@@ -46,7 +46,7 @@ public class BookController {
         booktInterface.addSharedBooks(idUserLenter,idUser);
         return ResponseEntity.status(HttpStatus.OK).body( new MessageDTO(HttpStatus.OK, false,"Libreria compartida correctamente"));
     }
-    @DeleteMapping("/descompartir_libreria/{idUser}/{idBook}")
+    @DeleteMapping("/descompartir_libreria/{idUserLenter}/{idUser}")
     public ResponseEntity<MessageDTO> removeSharedBook(@PathVariable int idUserLenter, @PathVariable int idUser) throws Exception{
         booktInterface.removeSharedBooks(idUserLenter,idUser);
         return ResponseEntity.status(HttpStatus.OK).body( new MessageDTO(HttpStatus.OK, false,"Libreria dejada de compartir correctamente"));

@@ -31,7 +31,7 @@ public class UserImpl implements UserInterface {
             throw new Exception("Ya existe un usuario con el correo " + userDTO.getEmail());
         }
         User user = new User();
-        user.setUsername(userDTO.getUsername());
+        user.setUsername(userDTO.getEmail());
         user.setEmail(userDTO.getEmail());
         String password = userDTO.getPassword();
         String confirmPassword = userDTO.getConfirmPassword();
@@ -52,6 +52,7 @@ public class UserImpl implements UserInterface {
         foundUser.setPhone(userDTO.getPhone());
         foundUser.setFirstName(userDTO.getFirstName());
         foundUser.setLastName(userDTO.getLastName());
+        foundUser.setUsername(userDTO.getUsername());
         userRepo.save(foundUser);
         emailInterface.sendEmail(new EmailDTO("Se actualizó con exito", "Ha actualizado con exito la informacion de su cuenta", foundUser.getEmail()));
         return foundUser.getId();
@@ -111,7 +112,7 @@ public class UserImpl implements UserInterface {
 
     @Override
     public void recuperatePassword(String emailUser) throws Exception {
-        emailInterface.sendEmail(new EmailDTO("Recuperar contraseña","Para recuperar su contraseña ingrese al siguiente enlace: https://localhost:4200/restaurar_contraseña/" + emailUser,emailUser));
+        emailInterface.sendEmail(new EmailDTO("Recuperar contraseña","Para recuperar su contraseña ingrese al siguiente enlace: https://localhost:8080/restaurar_contraseña/" + emailUser,emailUser));
     }
 
     @Override

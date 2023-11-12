@@ -31,16 +31,16 @@ public class UserController {
         userInterface.changeOldPassword(idUser, passwordDTO);
         return ResponseEntity.status(HttpStatus.OK).body(new MessageDTO(HttpStatus.OK, false, "Contraseña cambiada con exito"));
     }
-    @PostMapping("/recuperar_contraseña")
-    public ResponseEntity<MessageDTO> recuperatePassword(@RequestBody String email) throws Exception {
-        userInterface.recuperatePassword(email);
+    @PostMapping("/recuperar_contraseña/{emailUser}")
+    public ResponseEntity<MessageDTO> recuperatePassword(@PathVariable String emailUser) throws Exception {
+        userInterface.recuperatePassword(emailUser);
         return ResponseEntity.status(HttpStatus.OK).body(new MessageDTO(HttpStatus.OK, false, "Correo de recuperacion de contraseña enviado con exito"));
     }
     @GetMapping("/obtener_amigos/{idUser}")
     public ResponseEntity<MessageDTO> listFriendsUser(@PathVariable int idUser) throws Exception {
         return ResponseEntity.status(HttpStatus.OK).body( new MessageDTO(HttpStatus.OK, false,userInterface.listUserFriends(idUser)));
     }
-    @PostMapping("/agregar_amigo/{diUser}/{idUserFriend}")
+    @PostMapping("/agregar_amigo/{idUser}/{idUserFriend}")
     public ResponseEntity<MessageDTO> addFriend(@PathVariable int idUser, @PathVariable int idUserFriend) throws Exception {
         userInterface.addFriend(idUser, idUserFriend);
         return ResponseEntity.status(HttpStatus.OK).body(new MessageDTO(HttpStatus.OK, false, "Usuario agregado correctamente a amigos"));

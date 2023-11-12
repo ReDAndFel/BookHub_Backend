@@ -29,7 +29,7 @@ public class TransactionDetailImpl implements TransactionDetailInterface {
         transactionDetail.setTransaction(transaction);
         Book book = bookInterface.getBook(transactionDetailDTO.getIdBook());
         transactionDetail.setBook(book);
-        transactionDetail.setPrice(transactionDetailDTO.getPrice());
+        transactionDetail.setPrice(book.getPrice());
         transactionDetailRepo.save(transactionDetail);
         return transactionDetail;
     }

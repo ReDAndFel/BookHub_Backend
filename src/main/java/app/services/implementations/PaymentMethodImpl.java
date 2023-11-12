@@ -24,8 +24,7 @@ public class PaymentMethodImpl implements PaymentMethodInterface {
     @Override
     public int createPaymentMethod(PaymentMethodDTO paymentMethodDTO) throws Exception {
         String cardNumber = paymentMethodDTO.getCardNumber();
-        PaymentMethod foundPaymentMethod = paymentMethodRepo.findByCardNumber(paymentMethodDTO.getCardNumber());
-        validateCard(foundPaymentMethod, cardNumber);
+        validateCard(cardNumber);
         PaymentMethod paymentMethod = new PaymentMethod();
         paymentMethod.setCardNumber(paymentMethodDTO.getCardNumber());
         paymentMethod.setCvv(paymentMethodDTO.getCvv());
@@ -49,8 +48,9 @@ public class PaymentMethodImpl implements PaymentMethodInterface {
         return fechaLocalDate;
     }
 
-    private void validateCard(PaymentMethod paymentMethod, String foundPaymentMethod) throws Exception {
-        if (paymentMethod.getCardNumber().equals(foundPaymentMethod)) {
+    private void validateCard(String cardNumber) throws Exception {
+        PaymentMethod foundPaymentMethod = paymentMethodRepo.findByCardNumber(cardNumber);
+        if (foundPaymentMethod != null) {
             throw new Exception("El metodo de pago ya existe");
 
         }

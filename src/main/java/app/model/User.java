@@ -19,19 +19,19 @@ public class User implements Serializable {
     @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int id;
-    @Column(nullable = false)
+    @Column
     private String username;
     @Column(nullable = false)
     private String email;
     @Column(nullable = false)
     private String password;
-    @Column(nullable = false)
+    @Column
     private String firstName;
-    @Column(nullable = false)
+    @Column
     private String lastName;
-    @Column(nullable = false)
+    @Column
     private String phone;
-    @Column(nullable = false)
+    @Column
     private String address;
     @ManyToOne
     private Rol rol;

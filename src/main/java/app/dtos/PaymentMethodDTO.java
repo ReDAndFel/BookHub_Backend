@@ -12,8 +12,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 public class PaymentMethodDTO {
-    @NotNull(message = "El id no puede ser nulo")
-    @NotBlank(message = "El id no puede ser vacío")
+
     int id;
     @NotNull(message = "El numero de tarjeta no puede ser nulo")
     @NotBlank(message = "El numero de tarjeta no puede ser vacío")
