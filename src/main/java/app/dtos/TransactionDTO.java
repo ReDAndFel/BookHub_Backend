@@ -14,8 +14,7 @@ import java.util.List;
 @Getter
 @Setter
 public class TransactionDTO {
-    @NotNull(message = "El id no puede ser nulo")
-    @NotBlank(message = "El id no puede ser vacío")
+
     private  int id;
     @NotNull(message = "El valor total no puede ser nulo")
     @NotBlank(message = "El valor total no puede ser vacío")
