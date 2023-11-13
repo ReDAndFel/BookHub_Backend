@@ -14,4 +14,6 @@ public interface UserRepo extends JpaRepository<User, Integer> {
 
     @Query("select u.friend from User u where u.id = :userId")
     List<User> listUserFriends(int userId);
+    @Query("select u from User u where u.rol.id != 2")
+    List<User> getAllUsers ();
 }

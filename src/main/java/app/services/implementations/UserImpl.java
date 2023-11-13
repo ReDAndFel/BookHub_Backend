@@ -89,7 +89,7 @@ public class UserImpl implements UserInterface {
 
     @Override
     public List<UserDTO> listAllUsers() throws Exception {
-        List<User> userList = userRepo.findAll();
+        List<User> userList = userRepo.getAllUsers();
         List<UserDTO> userDTOList = new ArrayList<>();
         for (User user: userList){
             userDTOList.add(convertToDTO(user));
