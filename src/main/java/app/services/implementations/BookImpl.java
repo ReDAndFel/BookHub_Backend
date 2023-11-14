@@ -5,6 +5,7 @@ import app.dtos.FileDTO;
 import app.dtos.ImageDTO;
 import app.model.*;
 import app.repositories.BookRepo;
+import app.repositories.TransactionDetailRepo;
 import app.repositories.UserRepo;
 import app.services.interfaces.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,8 @@ import java.util.Map;
 public class BookImpl implements BookInterface {
     @Autowired
     private BookRepo bookRepo;
+    @Autowired
+    private TransactionDetailRepo transactionDetailRepo;
     @Autowired
     private UserInterface userInterface;
     @Autowired
@@ -259,6 +262,16 @@ public class BookImpl implements BookInterface {
     }
 
     @Override
+    public List<BookDTO> listPurchaseBooksUser(int idUser) {
+        List<Book> bookList = transactionDetailRepo.findBooksPurchasedByUser(idUser);
+        List<BookDTO> bookDTOList = new ArrayList<>();
+        for (Book book : bookList) {
+            bookDTOList.add(convertToDTO(book));
+        }
+        return bookDTOList;
+    }
+
+    @Override
     public int reviewBook(int idBook, BookDTO bookDTO) throws Exception {
         Book foundBook = getBook(idBook);
         validateExist(foundBook, idBook);
@@ -342,9 +355,12 @@ public class BookImpl implements BookInterface {
     public List<BookDTO> listLibraryUser(int idUser) {
         List<BookDTO> bookBoughtList = listUserBook(idUser);
         List<BookDTO> bookSharedList = listSharedBooksToUser(idUser);
+        List<BookDTO> bookPurchaseList = listPurchaseBooksUser(idUser);
+
         List<BookDTO> bookListLibrary = new ArrayList<>();
         bookListLibrary.addAll(bookBoughtList);
         bookListLibrary.addAll(bookSharedList);
+        bookListLibrary.addAll(bookPurchaseList);
         return bookListLibrary;
     }
 

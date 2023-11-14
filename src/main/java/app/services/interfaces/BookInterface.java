@@ -29,4 +29,5 @@ public interface BookInterface {
     List<BookDTO> listSharedBooksToUser(int idUser);
     List<BookDTO> listLibraryUser(int idUser);
     void validateExist(Book foundBook, int idBook) throws Exception;
+    List<BookDTO> listPurchaseBooksUser( int idUser);
 }
