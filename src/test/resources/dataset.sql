@@ -6,7 +6,13 @@ insert into user (id,address,email,first_name,last_name,password,phone,username,
 insert into user (id,address,email,first_name,last_name,password,phone,username,rol_id) values (2,"Cra40","andrea@gmail.com","Andrea","Garcia","1234","3104129312","Andreita10",1);
 insert into user (id,address,email,first_name,last_name,password,phone,username,rol_id) values (3,"","admin@gmail.com","","","1234","","",2);
 
-insert into category (id,icon_font_awesome,nombre) values (1,"","Fantasia");
+insert into category (id,icon_font_awesome,nombre) values (1,"faDragon","Fantasia");
+insert into category (id,icon_font_awesome,nombre) values (2,"faSkull","Terror");
+insert into category (id,icon_font_awesome,nombre) values (3,"faBook","Educacion");
+insert into category (id,icon_font_awesome,nombre) values (4,"faGlobe","Historia");
+insert into category (id,icon_font_awesome,nombre) values (5,"faFaceGrinHearts","Romance");
+insert into category (id,icon_font_awesome,nombre) values (6,"faHeart","Salud y cuidado");
+insert into category (id,icon_font_awesome,nombre) values (7,"faUserSecret","Misterio");
 
 insert into state_book (id,descripcion) values (1,"POR_REVISAR");
 insert into state_book (id,descripcion) values (2,"APROBADO");
