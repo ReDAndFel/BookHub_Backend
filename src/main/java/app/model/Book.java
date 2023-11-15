@@ -39,7 +39,7 @@ public class Book implements Serializable {
     private StateBook available;
     @ManyToOne
     private Category category;
-    @Column(nullable = false)
+    @Column(nullable = false, length = 1000)
     private String sinopsis;
     @ElementCollection
     private Map<String,String> file;

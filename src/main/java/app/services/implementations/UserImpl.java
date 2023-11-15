@@ -31,7 +31,7 @@ public class UserImpl implements UserInterface {
             throw new Exception("Ya existe un usuario con el correo " + userDTO.getEmail());
         }
         User user = new User();
-        user.setUsername(userDTO.getEmail());
+        user.setUsername(userDTO.getUsername());
         user.setEmail(userDTO.getEmail());
         String password = userDTO.getPassword();
         String confirmPassword = userDTO.getConfirmPassword();
